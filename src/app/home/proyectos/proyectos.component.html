@@ -1,3 +1,110 @@
-<p>
-  proyectos works!
-</p>
+<div id="container">
+  <form [formGroup]="login" class="login-form" (submit)="submitForm()">
+    <ion-item>
+      <ion-label position="floating">Nombre del Proyecto</ion-label>
+      <ion-input type="text" formControlName="name"></ion-input>
+    </ion-item>
+    <div *ngFor="let er of errors">
+      <ng-container *ngIf="login.get('name')?.hasError(er.type) && (login.get('name')?.touched || login.get('name')?.dirty)">
+        <ion-text color="danger">{{er.message}}</ion-text>
+      </ng-container>
+    </div>
+
+    <ion-item>
+      <ion-label position="floating">Empresa del Proyecto</ion-label>
+      <ion-select formControlName="empresa">
+        <ion-select-option *ngFor="let empresa of empresas" [value]="empresa.idempresa">{{ empresa.nombreempresa }}</ion-select-option>
+      </ion-select>
+    </ion-item>
+    <div>
+      <ng-container *ngIf="login.get('empresa')?.hasError('required') && (login.get('empresa')?.touched || login.get('empresa')?.dirty)">
+        <ion-text color="danger">Campo Requerido</ion-text>
+      </ng-container>
+    </div>
+
+    <ion-item>
+      <ion-label position="stacked">Inicio del Proyecto</ion-label>
+      <ion-input type="date" formControlName="fecha"></ion-input>
+    </ion-item>
+    <div>
+      <ng-container *ngIf="login.get('fecha')?.hasError('required') && (login.get('fecha')?.touched || login.get('fecha')?.dirty)">
+        <ion-text color="danger">Campo Requerido</ion-text>
+      </ng-container>
+    </div>
+
+    <ion-item>
+      <ion-label position="floating">Líder del Proyecto</ion-label>
+      <ion-select formControlName="lider">
+        <ion-select-option *ngFor="let personal of personales" [value]="personal.idpersona">
+          {{ personal.nombre }} {{ personal.apellidop }} {{ personal.apellidom }}
+        </ion-select-option>
+      </ion-select>
+    </ion-item>
+    <div>
+      <ng-container *ngIf="login.get('lider')?.hasError('required') && (login.get('lider')?.touched || login.get('lider')?.dirty)">
+        <ion-text color="danger">Campo Requerido</ion-text>
+      </ng-container>
+    </div>
+
+    <ion-item>
+      <ion-label position="floating">Integrante 1 del Proyecto</ion-label>
+      <ion-select formControlName="integrante1">
+        <ion-select-option *ngFor="let personal of personales" [value]="personal.idpersona">
+          {{ personal.nombre }} {{ personal.apellidop }} {{ personal.apellidom }}
+        </ion-select-option>
+      </ion-select>
+    </ion-item>
+    <div>
+      <ng-container *ngIf="login.get('integrante1')?.hasError('required') && (login.get('integrante1')?.touched || login.get('integrante1')?.dirty)">
+        <ion-text color="danger">Campo Requerido</ion-text>
+      </ng-container>
+    </div>
+
+    <ion-item>
+      <ion-label position="floating">Integrante 2 del Proyecto</ion-label>
+      <ion-select formControlName="integrante2">
+        <ion-select-option *ngFor="let personal of personales" [value]="personal.idpersona">
+          {{ personal.nombre }} {{ personal.apellidop }} {{ personal.apellidom }}
+        </ion-select-option>
+      </ion-select>
+    </ion-item>
+    <div>
+      <ng-container *ngIf="login.get('integrante2')?.hasError('required') && (login.get('integrante2')?.touched || login.get('integrante2')?.dirty)">
+        <ion-text color="danger">Campo Requerido</ion-text>
+      </ng-container>
+    </div>
+
+    <ion-item>
+      <ion-label position="floating">Integrante 3 del Proyecto</ion-label>
+      <ion-select formControlName="integrante3">
+        <ion-select-option *ngFor="let personal of personales" [value]="personal.idpersona">
+          {{ personal.nombre }} {{ personal.apellidop }} {{ personal.apellidom }}
+        </ion-select-option>
+      </ion-select>
+    </ion-item>
+    <div>
+      <ng-container *ngIf="login.get('integrante3')?.hasError('required') && (login.get('integrante3')?.touched || login.get('integrante3')?.dirty)">
+        <ion-text color="danger">Campo Requerido</ion-text>
+      </ng-container>
+    </div>
+
+    <ion-item>
+      <ion-label position="floating">Descripción del Proyecto</ion-label>
+      <ion-input type="text" formControlName="desc"></ion-input>
+    </ion-item>
+    <div>
+      <ng-container *ngIf="login.get('desc')?.hasError('required') && (login.get('desc')?.touched || login.get('desc')?.dirty)">
+        <ion-text color="danger">Campo Requerido</ion-text>
+      </ng-container>
+    </div>
+
+    <div class="links-container">
+      <ion-button expand="block" color="primary" class="contrast-button" (click)="submitForm()">Dar Alta</ion-button>
+      <ion-button expand="block" color="primary" class="contrast-button" href="consulta">Consulta</ion-button>
+    </div>
+  </form>
+</div>
+
+<ion-footer>
+
+</ion-footer>

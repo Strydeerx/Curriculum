@@ -1,0 +1,156 @@
+
+<form *ngIf="!isEditMode; else editForm" [formGroup]="consultaForm">
+  <ion-item>
+    <ion-label>Nombre del Proyecto</ion-label>
+    <ion-select formControlName="nombreproyecto" (ionChange)="onProyectoChange($event)">
+      <ion-select-option *ngFor="let proyecto of proyectos" [value]="proyecto.nombreproyecto">{{ proyecto.nombreproyecto }}</ion-select-option>
+    </ion-select>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>Empresa</ion-label>
+    <ion-input formControlName="empresa" readonly></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>Fecha de Inicio</ion-label>
+    <ion-input formControlName="fecha" type="date" readonly></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>Líder</ion-label>
+    <ion-input formControlName="lider" readonly></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>Integrante 1</ion-label>
+    <ion-input formControlName="integrante1" readonly></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>Integrante 2</ion-label>
+    <ion-input formControlName="integrante2" readonly></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>Integrante 3</ion-label>
+    <ion-input formControlName="integrante3" readonly></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>Descripción</ion-label>
+    <ion-textarea formControlName="desc" readonly></ion-textarea>
+  </ion-item>
+  <div class="links-container">
+    <ion-button expand="block" color="primary" class="contrast-button" (click)="toggleEditMode()">Editar</ion-button>
+    <ion-button (click)="eliminarProyecto()">Eliminar</ion-button>
+  </div>
+</form>
+
+<ng-template #editForm>
+  <div id="container">
+    <form [formGroup]="consultaForm" class="login-form" (submit)="submitForm()">
+      <ion-item>
+        <ion-label position="floating">Nombre del Proyecto</ion-label>
+        <ion-input type="text" formControlName="nombreproyecto"></ion-input>
+      </ion-item>
+      <div *ngFor="let er of errors">
+        <ng-container *ngIf="consultaForm.get('nombreproyecto')?.hasError(er.type) && (consultaForm.get('nombreproyecto')?.touched || consultaForm.get('nombreproyecto')?.dirty)">
+          <ion-text color="danger">{{er.message}}</ion-text>
+        </ng-container>
+      </div>
+
+      <ion-item>
+        <ion-label position="floating">Empresa del Proyecto</ion-label>
+        <ion-select formControlName="empresa">
+          <ion-select-option *ngFor="let empresa of empresas" [value]="empresa.idempresa">{{ empresa.nombreempresa }}</ion-select-option>
+        </ion-select>
+      </ion-item>
+      <div>
+        <ng-container *ngIf="consultaForm.get('empresa')?.hasError('required') && (consultaForm.get('empresa')?.touched || consultaForm.get('empresa')?.dirty)">
+          <ion-text color="danger">Campo Requerido</ion-text>
+        </ng-container>
+      </div>
+
+      <ion-item>
+        <ion-label position="stacked">Inicio del Proyecto</ion-label>
+        <ion-input type="date" formControlName="fecha"></ion-input>
+      </ion-item>
+      <div>
+        <ng-container *ngIf="consultaForm.get('fecha')?.hasError('required') && (consultaForm.get('fecha')?.touched || consultaForm.get('fecha')?.dirty)">
+          <ion-text color="danger">Campo Requerido</ion-text>
+        </ng-container>
+      </div>
+
+      <ion-item>
+        <ion-label position="floating">Líder del Proyecto</ion-label>
+        <ion-select formControlName="lider">
+          <ion-select-option *ngFor="let personal of personales" [value]="personal.idpersona">
+            {{ personal.nombre }} {{ personal.apellidop }} {{ personal.apellidom }}
+          </ion-select-option>
+        </ion-select>
+      </ion-item>
+      <div>
+        <ng-container *ngIf="consultaForm.get('lider')?.hasError('required') && (consultaForm.get('lider')?.touched || consultaForm.get('lider')?.dirty)">
+          <ion-text color="danger">Campo Requerido</ion-text>
+        </ng-container>
+      </div>
+
+      <ion-item>
+        <ion-label position="floating">Integrante 1 del Proyecto</ion-label>
+        <ion-select formControlName="integrante1">
+          <ion-select-option *ngFor="let personal of personales" [value]="personal.idpersona">
+            {{ personal.nombre }} {{ personal.apellidop }} {{ personal.apellidom }}
+          </ion-select-option>
+        </ion-select>
+      </ion-item>
+      <div>
+        <ng-container *ngIf="consultaForm.get('integrante1')?.hasError('required') && (consultaForm.get('integrante1')?.touched || consultaForm.get('integrante1')?.dirty)">
+          <ion-text color="danger">Campo Requerido</ion-text>
+        </ng-container>
+      </div>
+
+      <ion-item>
+        <ion-label position="floating">Integrante 2 del Proyecto</ion-label>
+        <ion-select formControlName="integrante2">
+          <ion-select-option *ngFor="let personal of personales" [value]="personal.idpersona">
+            {{ personal.nombre }} {{ personal.apellidop }} {{ personal.apellidom }}
+          </ion-select-option>
+        </ion-select>
+      </ion-item>
+      <div>
+        <ng-container *ngIf="consultaForm.get('integrante2')?.hasError('required') && (consultaForm.get('integrante2')?.touched || consultaForm.get('integrante2')?.dirty)">
+          <ion-text color="danger">Campo Requerido</ion-text>
+        </ng-container>
+      </div>
+
+      <ion-item>
+        <ion-label position="floating">Integrante 3 del Proyecto</ion-label>
+        <ion-select formControlName="integrante3">
+          <ion-select-option *ngFor="let personal of personales" [value]="personal.idpersona">
+            {{ personal.nombre }} {{ personal.apellidop }} {{ personal.apellidom }}
+          </ion-select-option>
+        </ion-select>
+      </ion-item>
+      <div>
+        <ng-container *ngIf="consultaForm.get('integrante3')?.hasError('required') && (consultaForm.get('integrante3')?.touched || consultaForm.get('integrante3')?.dirty)">
+          <ion-text color="danger">Campo Requerido</ion-text>
+        </ng-container>
+      </div>
+
+      <ion-item>
+        <ion-label position="floating">Descripción del Proyecto</ion-label>
+        <ion-input type="text" formControlName="desc"></ion-input>
+      </ion-item>
+      <div>
+        <ng-container *ngIf="consultaForm.get('desc')?.hasError('required') && (consultaForm.get('desc')?.touched || consultaForm.get('desc')?.dirty)">
+          <ion-text color="danger">Campo Requerido</ion-text>
+        </ng-container>
+      </div>
+
+      <ion-button type="submit" expand="block" color="primary" class="contrast-button">Guardar</ion-button>
+      <ion-button (click)="toggleEditMode()">Cancelar</ion-button>
+    </form>
+  </div>
+</ng-template>
+

@@ -1,0 +1,55 @@
+.header-container {
+    --background: #b8e994; /* Color verde claro para el encabezado */
+  }
+  
+  .content-container {
+    --background: #b8e994; /* Color verde claro para el cuerpo de la página */
+  }
+  
+  /* Estilos para el título del encabezado */
+  .header-title {
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+  }
+  
+  /* Estilos para el formulario de inicio de sesión */
+  .login-form {
+    max-width: 400px;
+    margin: 0 auto; /* Centrar el formulario */
+    background-color: #fff; /* Fondo blanco para el formulario */
+    padding: 20px;
+  }
+  
+  /* Estilos para los mensajes de error */
+  ion-text {
+    font-size: 14px;
+  }
+  
+  .contrast-button{
+    padding-top: 10px;
+  }
+  
+  .footer-container {
+    text-align: center; /* Centrar el contenido del pie de página */
+  }
+  
+  /* Estilos para la barra de herramientas del pie de página */
+  .footer-toolbar {
+    --min-height: 56px; /* Altura mínima para el pie de página */
+  }
+  
+  /* Estilos para los enlaces */
+  .links-container {
+    text-align: right; /* Alinear los enlaces a la derecha */
+    margin-top: 10px; /* Espacio superior */
+  }
+  
+  .link {
+    margin-left: 10px; /* Espaciado entre enlaces */
+  }
+
+  .links-container {
+    display: flex; /* Esto hace que los elementos se alineen en una fila */
+    justify-content: space-around; /* Esto distribuye el espacio entre los elementos */
+  }
