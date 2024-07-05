@@ -1,0 +1,26 @@
+.center-grid {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .table-bordered {
+    width: 100%;
+  }
+  
+  .table-row {
+    display: flex;
+    width: 100%;
+  }
+  
+  .table-cell {
+    border: 1px solid #000; /* Cambia el color y grosor del borde según tus necesidades */
+    padding: 8px; /* Espaciado dentro de las celdas */
+    background-color: hsla(54, 74%, 71%, 0.475);
+  }
+  
+  .table-header {
+    font-weight: bold;
+    background-color: hsla(54, 82%, 66%, 0.475); /* Color de fondo para las celdas de encabezado */
+  }
+  

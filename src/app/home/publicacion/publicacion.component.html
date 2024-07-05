@@ -1,3 +1,115 @@
-<p>
-  publicacion works!
-</p>
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Registro de publicaciones
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+
+  <h1>Solo tienes dos opciones. En el campo "opción" digita 1 para libro o 2 para artículo</h1>
+  <br>
+  <br>
+
+  <form [formGroup]="loginForm">
+    <ion-item>
+      <ion-label position="floating">Opción <ion-text color="danger">*</ion-text></ion-label>
+      <ion-input  formControlName="idproducto" type="text"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Título <ion-text color="danger">*</ion-text></ion-label>
+      <ion-input  formControlName="titulo" type="text"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Nombre de la editorial <ion-text color="danger">*</ion-text></ion-label>
+      <ion-input formControlName="editorial" type="text"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Año de publicación <ion-text color="danger">*</ion-text></ion-label>
+      <ion-input formControlName="anio" type="text"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Mes de publicación <ion-text color="danger">*</ion-text></ion-label>
+      <ion-input formControlName="mes" type="text"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Día de piublicación <ion-text color="danger">*</ion-text></ion-label>
+      <ion-input formControlName="dia" type="text"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Número de páginas <ion-text color="danger">*</ion-text></ion-label>
+      <ion-input formControlName="paginas" type="text"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Url <ion-text color="danger">*</ion-text></ion-label>
+      <ion-input formControlName="url" type="text"></ion-input>
+    </ion-item>
+    <ion-button (click)="recuperaformulario()" block color="primary" type="submit" [disabled]="loginForm.invalid">
+      RECUPERA FORMULARIO
+    </ion-button>
+  </form>
+  <br>
+  <br>
+
+  <ion-button expand="block" fill="clear" shape="round" (click)="onClick()" class="open-button">
+    Consultar personas
+  </ion-button>
+  
+  <div *ngIf="showTable">
+    <ion-button expand="block" fill="clear" shape="round" (click)="onClose()" class="close-button">
+      Cerrar
+    </ion-button>
+    <ion-grid class="table-bordered">
+      <ion-row class="center-grid table-row">
+        <ion-col size="1" class="table-header table-cell">Id persona</ion-col>
+        <ion-col size="1.5" class="table-header table-cell">Nombre</ion-col>
+        <ion-col size="1.5" class="table-header table-cell">Apellido paterno</ion-col>
+        <ion-col size="1.5" class="table-header table-cell">Apellido materno</ion-col>
+        <ion-col size="2" class="table-header table-cell">Correo</ion-col>
+        <ion-col size="1.1" class="table-header table-cell">telefono</ion-col>
+        <ion-col size="1" class="table-header table-cell">id genero</ion-col>
+        <ion-col size="1" class="table-header table-cell">id estado</ion-col>
+        <ion-col size="1" class="table-header table-cell">id pais</ion-col>
+      </ion-row>
+      <ion-row class="center-grid table-row" *ngFor="let i of consultadatos">
+        <ion-col size="1" class="table-cell">{{i.idpersona}}</ion-col>
+        <ion-col size="1.5" class="table-cell">{{i.nombre}}</ion-col>
+        <ion-col size="1.5" class="table-cell">{{i.apellidop}}</ion-col>
+        <ion-col size="1.5" class="table-cell">{{i.apellidom}}</ion-col>
+        <ion-col size="2" class="table-cell">{{i.correo}}</ion-col>
+        <ion-col size="1.1" class="table-cell">{{i.telefono}}</ion-col>
+        <ion-col size="1" class="table-cell">{{i.idgenero}}</ion-col>
+        <ion-col size="1" class="table-cell">{{i.idestado}}</ion-col>
+        <ion-col size="1" class="table-cell">{{i.idpais}}</ion-col>
+      </ion-row>
+    </ion-grid>
+  </div>
+  
+  <br>
+  <br>
+  <ion-button expand="block" fill="clear" shape="round" class="open-button">
+    Consultar publicaciones
+  </ion-button>
+  <br>
+  <br>
+  
+<h1>Depués de que hayas consultado el numero de tu publicacion y tu numero de persona, ingresalos en la siguiente tabla </h1>
+  <form [formGroup]="loginForm1">
+    <ion-item>
+      <ion-label position="floating">numero de registro <ion-text color="danger">*</ion-text></ion-label>
+      <ion-input formControlName="id" type="text"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">numero de publicacion <ion-text color="danger">*</ion-text></ion-label>
+      <ion-input formControlName="idpublicacion" type="text"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Numero de persona <ion-text color="danger">*</ion-text></ion-label>
+      <ion-input formControlName="idpersona" type="text"></ion-input>
+    </ion-item>
+    <ion-button (click)="recuperaformulario1()" block color="primary" type="submit" [disabled]="loginForm1.invalid">
+      RECUPERA FORMULARIO
+    </ion-button>
+  </form>
+</ion-content>
