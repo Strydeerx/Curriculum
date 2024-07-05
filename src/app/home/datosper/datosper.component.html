@@ -1,9 +1,77 @@
-
+<app-head></app-head>
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Blank
+      Registro de datos personales
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
+<ion-content [fullscreen]="true">
+  <div  class="form-container">
+
+    <form [formGroup]="loginForm" (ngSubmit)="agregar()">
+      <ion-item>
+        <ion-label position="floating">ID persona</ion-label>
+        <ion-input formControlName="idpersona"></ion-input>
+      </ion-item>
+      
+      <ion-item>
+        <ion-label position="floating">Nombre</ion-label>
+        <ion-input formControlName="nombre"></ion-input>
+      </ion-item>
+      
+      <ion-item>
+        <ion-label position="floating">Apellido Paterno</ion-label>
+        <ion-input formControlName="apellidop"></ion-input>
+      </ion-item>
+      
+      <ion-item>
+        <ion-label position="floating">Apellido Materno</ion-label>
+        <ion-input formControlName="apellidom"></ion-input>
+      </ion-item>
+      
+      <ion-item>
+        <ion-label position="floating">Correo electronico</ion-label>
+        <ion-input formControlName="correo"></ion-input>
+      </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Telefono</ion-label>
+      <ion-input formControlName="telefono"></ion-input>
+    </ion-item>
+    
+    <ion-item>
+      <ion-label position="floating">Id genero</ion-label>
+      <ion-input formControlName="idgenero"></ion-input>
+    </ion-item>
+    
+    <ion-item>
+      <ion-label position="floating">Id estado</ion-label>
+      <ion-input formControlName="idestado"></ion-input>
+    </ion-item>
+    
+    <ion-item>
+      <ion-label position="floating">Id pais</ion-label>
+      <ion-input formControlName="idpais"></ion-input>
+    </ion-item>
+    
+    <ion-button (click)="obtenerid()" block color="success">
+      Consultar por ID
+    </ion-button>
+    
+    <ion-button (click)="agregar()" block color="success">
+      Insertar Datos
+    </ion-button>
+
+    <ion-button (click)="editar()" block color="success">
+      Actualizar Datos
+    </ion-button>
+    
+    <ion-button (click)="eliminar()" block color="success">
+      Eliminar Datos
+    </ion-button>
+  </form>
+</div>
+</ion-content>
+<app-foot></app-foot>

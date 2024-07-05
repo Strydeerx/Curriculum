@@ -1,0 +1,61 @@
+ion-header {
+    --background: #4caf50; /* Fondo del encabezado */
+    color: white; /* Color del texto */
+  }
+  
+  ion-toolbar {
+    padding: 0 16px;
+  }
+  
+  ion-title {
+    font-size: 1.5em; /* Tamaño del título */
+    font-weight: bold; /* Negrita */
+    text-align: center; /* Centrar el texto */
+    color: white; /* Color del texto */
+  }
+  
+  ion-content {
+    --background: #f0f0f0; /* Fondo del contenido */
+    display: flex;
+    justify-content: center; /* Centrar horizontalmente */
+    align-items: center; /* Centrar verticalmente */
+    height: 100%; /* Asegurar que ocupe todo el alto de la página */
+    padding: 16px;
+  }
+  
+  .form-container {
+    width: 100%; /* Ancho completo del contenedor */
+    max-width: 1550px; /* Ancho máximo del contenedor */
+    background: #ffffff; /* Fondo blanco */
+    border-radius: 10px; /* Bordes redondeados */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra */
+    padding: 20px; /* Espaciado interno */
+    box-sizing: border-box; /* Incluir padding y border en el tamaño total */
+  }
+  
+  ion-item {
+    --background: #ffffff; /* Fondo blanco para cada item */
+    margin: 8px 0; /* Espaciado entre items */
+    border-radius: 5px; /* Bordes redondeados */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra para cada item */
+  }
+  
+  ion-label {
+    font-weight: bold; /* Negrita para las etiquetas */
+  }
+  
+  ion-button {
+    margin-top: 16px; /* Margen superior para los botones */
+    width: 100%; /* Ancho completo de los botones */
+    --border-radius: 5px; /* Bordes redondeados */
+  }
+  
+  ion-button[color="success"] {
+    --background: #4caf50; /* Fondo verde para los botones */
+    --background-hover: #388e3c; /* Fondo verde más oscuro al pasar el ratón */
+  }
+  
+  ion-button[color="success"]:hover {
+    transform: scale(1.02); /* Efecto de escala al pasar el ratón */
+  }
+  
