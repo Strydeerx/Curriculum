@@ -1,0 +1,182 @@
+.header-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #038f31;
+    color: rgb(255, 255, 255);
+    padding: 0rem;
+    position: relative;
+}
+
+.menu-icon {
+    position: absolute;
+    left: 1rem;
+}
+
+.menu-icon button {
+    background: none;
+    border: none;
+    color: rgb(255, 255, 255);
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+.menu {
+    display: none;
+    position: absolute;
+    top: 2rem;
+    left: 2rem;
+    background-color: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    z-index: 1;
+    flex-direction: column;
+}
+
+.menu.show {
+    display: flex;
+}
+
+.menu a {
+    padding: 0.5rem 1rem;
+    color: #038f31;
+    text-decoration: none;
+}
+
+.menu a:hover {
+    background-color: #f0f0f0;
+}
+
+.summary-container {
+    width: 60%;
+    float: left;
+    padding: 20px;
+    box-sizing: border-box;
+  }
+  
+  .profile-summary {
+    width: 35%;
+    float: right;
+    padding: 20px;
+    background-color: #f4f4f4;
+    box-sizing: border-box;
+  }
+  
+  h1 {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+  .titlesintesis{
+    font-size: 30px;
+    color:#000000;
+    padding: 1rem;
+  }
+  h2{
+    font-size: 24px;
+    color:#000000;
+  }
+  p{
+    font-size: 18px;
+    color:#000000;
+  }
+  
+  .job-summary {
+    border: 1px solid #ccc;
+    padding: 20px;
+    margin-bottom: 20px;
+  }
+  
+  .job-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .job-header img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    margin-right: 20px;
+  }
+  
+  .job-details {
+    flex-grow: 1;
+  }
+  
+  .job-actions {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .job-actions button {
+    margin: 5px 0;
+  }
+  
+  .add-job-button {
+    margin-top: 20px;
+    padding: 10px;
+    border: 1px dashed #000000;
+    background-color: #f9f9f9;
+    color:#000000;
+    cursor: pointer;
+  }
+  
+  .finish-button {
+    display: block;
+    width: 100%;
+    padding: 15px;
+    background-color: #0caf2f;
+    color: rgb(255, 255, 255);
+    border: none;
+    cursor: pointer;
+  }
+  
+  .finish-button:hover {
+    background-color: #dd2209;
+  }
+  
+  .profile-content {
+    margin-top: 20px;
+  }
+  
+  .profile-section {
+    margin-bottom: 20px;
+  }
+  
+  .profile-section h2 {
+    font-size: 18px;
+    margin-bottom: 10px;
+  }
+  
+  .profile-section p,
+  .profile-section ul {
+    margin: 0;
+  }
+  
+  .profile-section ul {
+    list-style-type: disc;
+    padding-left: 20px;
+  }
+  main{
+    background-color: #ffffff;
+    padding: 7rem;
+}
+.editbutton,
+.deletebutton {
+  font-size: 2rem;  // Ajusta el tamaño de la fuente
+  padding: 10px 20px;  // Ajusta el relleno del botón
+  border: none;  // Remueve el borde
+  border-radius: 5px;  // Añade bordes redondeados
+  cursor: pointer;  // Cambia el cursor al pasar por el botón
+}
+.editbutton {
+  background-color: #f5f5f5e0;  // Color de fondo para el botón de edición
+}
+
+.deletebutton {
+  background-color: #f5f5f5e0;  // Color de fondo para el botón de eliminación
+}
+
+.editbutton:hover,
+.deletebutton:hover {
+  opacity: 0.8;  // Efecto de opacidad al pasar el cursor
+}

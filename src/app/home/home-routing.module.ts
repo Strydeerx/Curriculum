@@ -8,6 +8,8 @@ import { ExperienciaComponent } from './experiencia/experiencia.component';
 import { CertificaComponent } from './certifica/certifica.component';
 import { ProyectosComponent } from './proyectos/proyectos.component';
 import { PublicacionComponent } from './publicacion/publicacion.component';
+import { DescribeComponent } from './experiencia/describe/describe.component';
+import { HistorialComponent } from './experiencia/historial/historial.component';
 
 const routes: Routes = [
   {
@@ -29,6 +31,18 @@ const routes: Routes = [
   {
     path: 'exper',
     component: ExperienciaComponent,
+   /* children: [ para paginas
+      { path: 'describe', component: DescribeComponent },
+      { path: 'historial', component: HistorialComponent }
+    ]*/
+  },
+  {
+    path: 'exper/historial',//componenetes
+    component: HistorialComponent,
+  },
+  {
+    path: 'exper/describe',//componenetes
+    component: DescribeComponent,
   },
   {
     path: 'certif',

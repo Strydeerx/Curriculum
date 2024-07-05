@@ -1,0 +1,32 @@
+<div class="header-container">
+  <div class="menu-icon">
+      <button (click)="toggleMenu()">&#9776;</button>
+      <div id="menu" class="menu" [ngClass]="{'show': isMenuVisible}">
+          <a href="#" [routerLink]="['/home/exper/describe']" >EDITAR</a>
+          <a href="#" [routerLink]="['/home/exper/historial']">CONSULTAR</a>
+      </div>
+  </div>
+  <h1>ACTUALIZA TU EXPERIENCIA LABORAL</h1>
+</div>
+<main>
+  <div class="summary-container">
+    <div class="titlesintesis">Síntesis de la Historia Laboral</div>
+  <div class="job-summary">
+    <div class="job-header">
+      <img src="https://d1yjjnpx0p53s8.cloudfront.net/styles/logo-thumbnail/s3/0016/5330/brand.gif?itok=dXaaaEph" alt="Profile Picture">
+      <div class="job-details">
+        <h2>Primaria Rosario Castellanos</h2>
+        <p>Docente de Educación Especial</p>
+        <p>México, Tecámac</p>
+        <p>15 Enero 2023 - 15 Febrero 2024</p>
+      </div>
+      <div class="job-actions">
+        <button class="editbutton">✏️</button>
+        <button class="deletebutton">🗑️</button>
+      </div>
+    </div>
+    <button  [routerLink]="['/home/exper']" class="add-job-button">Agregar otro puesto</button>
+  </div>
+  <button class="finish-button" [routerLink]="['/home/main']">Terminar</button>
+</div>
+</main>
