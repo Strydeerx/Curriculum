@@ -1,0 +1,44 @@
+<div class="header-container">
+  <div class="menu-icon">
+      <button (click)="toggleMenu()">&#9776;</button>
+      <div id="menu" class="menu" [ngClass]="{'show': isMenuVisible}">
+          <a href="#" [routerLink]="['/home/exper/describe']" >EDITAR</a>
+          <a href="#" [routerLink]="['/home/exper/historial']">CONSULTAR</a>
+      </div>
+  </div>
+  <h1>ACTUALIZA TU EXPERIENCIA LABORAL</h1>
+</div>
+
+<main>
+  <form class="container">
+  <div class="row">
+    <div class="column">
+      <p>Describe tu historia Laboral</p>
+      <div class="textarea-container">
+        <textarea  id="workDescription" placeholder="Escribe tus responsabilidades, logros y detalles del puesto."></textarea>
+      </div>
+    </div>
+    
+    <div class="column">
+      <div class="options-container">
+        <h1>Puedes encontrar algunas tareas</h1>
+        <ul id="optionsList">
+          <li><button class="addButton" (click)="addText('Desarrollo de planes de estudio')" type="button">+</button> Desarrollo de planes de estudio</li>
+          <li><button class="addButton" (click)="addText('Participación en actividades extracurriculares')" type="button">+</button> Participación en actividades extracurriculares</li>
+          <li><button class="addButton" (click)="addText('Colaboración con colegas')" type="button">+</button> Colaboración con colegas</li>
+          <li><button class="addButton" (click)="addText('Participación en actividades de desarrollo profesional')" type="button">+</button> Participación en actividades de desarrollo profesional</li>
+          <li><button class="addButton" (click)="addText('Proyectos de investigación o publicaciones')" type="button">+</button> Proyectos de investigación o publicaciones</li>
+          <li><button class="addButton" (click)="addText('Experiencia en tecnología educativa')" type="button">+</button> Experiencia en tecnología educativa</li>
+          <li><button class="addButton" (click)="addText('Organización de eventos educativos')" type="button">+</button> Organización de eventos educativos</li>
+          <li><button class="addButton" (click)="addText('Participación en comités escolares')" type="button">+</button> Participación en comités escolares</li>
+          <li><button class="addButton" (click)="addText('Implementación de estrategias de enseñanza')" type="button">+</button> Implementación de estrategias de enseñanza</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="buttons">
+   <button type="button" (click)="goBack()" [routerLink]="['/home/exper']">Regresar</button>
+    <button type="button" (click)="recuperaformulariodescribe()" [routerLink]="['/home/exper/historial']">Continuar</button>
+  </div>
+  </form>
+</main>

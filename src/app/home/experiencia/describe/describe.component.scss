@@ -1,0 +1,158 @@
+
+.header-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #038f31;
+    color: rgb(255, 255, 255);
+    padding: 1rem;
+    position: relative;
+}
+
+.menu-icon {
+    position: absolute;
+    left: 1rem;
+}
+
+.menu-icon button {
+    background: none;
+    border: none;
+    color: rgb(255, 255, 255);
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+.menu {
+    display: none;
+    position: absolute;
+    top: 2rem;
+    left: 2rem;
+    background-color: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    z-index: 1;
+    flex-direction: column;
+}
+
+.menu.show {
+    display: flex;
+}
+
+.menu a {
+    padding: 0.5rem 1rem;
+    color: #038f31;
+    text-decoration: none;
+}
+
+.menu a:hover {
+    background-color: #f0f0f0;
+}
+
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    background-color: rgb(0, 0, 0); /* Fondo blanco */
+    font-family: Arial, sans-serif;
+  }
+  
+  .container {
+    width: 80%;
+    margin: 0 auto;
+    text-align: center;
+    padding: 20px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+  }
+  p{
+    color:#000000;
+    font-size: 30px;
+  }
+  
+  .row {
+    display: flex;
+    width: 100%;
+  }
+  
+  .column {
+    flex: 50%;
+    padding: 8px;
+  }
+  
+  .textarea-container {
+    margin: 20px 0;
+  }
+  
+  textarea {
+    width: 100%;
+    height: 150px;
+    padding: 10px;
+    box-sizing: border-box;
+    border: 2px solid #8d8c8c;
+    border-radius: 4px;
+    background-color: #ede9e9;
+    color:#000000;
+  }
+  
+  .options-container {
+    margin: 20px 0;
+    color:  rgb(0, 0, 0);
+  }
+  
+  #searchBox {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  li {
+    text-align: left;
+    margin: 5px 0;
+  }
+  
+  .addButton {
+    margin-right: 10px;
+    padding: 5px 10px;
+    cursor: pointer;
+    border: none;
+    background-color: #09c146;
+    color: white;
+    border-radius: 4px;
+  }
+  
+  .addButton:hover {
+    background-color: #0cae58;
+  }
+  
+  .buttons {
+    margin: 20px 0;
+  }
+  
+  button {
+    padding: 10px 20px;
+    margin: 5px;
+    cursor: pointer;
+    border: none;
+    background-color: #09c146;
+    color: white;
+    border-radius: 4px;
+  }
+  
+  button:hover {
+    background-color: #b30000;
+  }
+
+  main{
+    background-color: #ffffff;
+    padding: 2rem;
+}

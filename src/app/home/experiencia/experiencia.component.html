@@ -1,3 +1,69 @@
-<p>
-  experiencia works!
-</p>
+
+<div class="header-container">
+  <div class="menu-icon">
+      <button (click)="toggleMenu()">&#9776;</button>
+      <div id="menu" class="menu" [ngClass]="{'show': isMenuVisible}">
+          <a href="#" [routerLink]="'describe'" >EDITAR</a>
+          <a href="#" [routerLink]="'historial'">CONSULTAR</a>
+      </div>
+  </div>
+  <h1>ACTUALIZA TU EXPERIENCIA LABORAL</h1>
+</div>
+<main>
+  <form [formGroup]="loginForm">
+  <section class="experience-form">
+    <div class="left-column">
+      <h2>Cuéntanos acerca de tu historia Laboral</h2>
+      <p>Comienza con el trabajo más reciente y continúa en orden regresivo.</p>
+      <!--<div class="form-group">
+        <label for="logo">Logotipo de la institución</label>
+        <input type="file" id="logo" name="logo" (change)="onLogoSelected($event)">
+        <img *ngIf="logoUrl" class="image-placeholder" [src]="logoUrl" alt="Logotipo de la institución">
+      </div>-->
+      <div class="form-group">
+        <label for="start-date">Fecha Inicial</label>
+        <input type="date" id="start-date" formControlName="fechainicial">
+      </div>
+      <div class="form-group">
+        <label for="end-date">Fecha Final</label>
+        <input type="date" id="end-date" formControlName="fechafinal">
+      </div>
+    </div>
+    <div class="right-column">
+      <div class="tips-container">
+        <button class="tips-button" (mouseover)="showTips()" (mouseleave)="hideTips()">Consejos</button>
+        <div class="tips-message" [ngClass]="{'show': areTipsVisible}">
+          <ul> 
+          <li>Incluye hasta diez años de experiencia profesional reciente, comenzando por tu empresa actual o más reciente.</li>
+          <li>Utiliza viñetas para enumerar tus principales logros y experiencia, de modo que los reclutadores puedan leer tu CV con facilidad.</li>
+          <li>Si estás solicitando un trabajo en el que no tienes experiencia, muestra las competencias y la experiencia que serán valiosas en tu nuevo trabajo.</li>
+          <li>Si tienes una experiencia profesional relevante de hace más de diez años, te recomendamos agregar una sección separada que se llame "Experiencia profesional adicional".</li>   
+        </ul> 
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="position">Puesto / cargo</label>
+        <input type="text" id="position" formControlName="puesto" placeholder="Ej. Profesor de Educación Especial">
+      </div>
+      <div class="form-group">
+        <label for="company">Institución / Empresa</label>
+        <input type="text" id="company" formControlName="empresa" placeholder="Ej. Rosario Castellanos">
+      </div>
+      <div class="form-group">
+        <label for="city">Ciudad / Localidad</label>
+        <input type="text" id="city" formControlName="ciudad" placeholder="Ej. México">
+      </div>
+      <div class="form-group">
+        <label for="municipality">Alcaldía / Municipio</label>
+        <input type="text" id="municipality" formControlName="alcaldia" placeholder="Ej. Ecatepec de Morelos">
+      </div>
+      <div class="form-group">
+        <input type="checkbox" id="current-job" formControlName="empleoactual">
+        <label for="current-job">Empleo Actual</label>
+      </div>
+    </div>
+    <button type="submit" [routerLink]="['/home/main']"class="continue-button">Regresar</button>
+    <button (click)="recuperaformulariocargo()" type="submit" [routerLink]="['describe']"class="continue-button">Continuar</button>
+  </section>
+</form>
+</main>
